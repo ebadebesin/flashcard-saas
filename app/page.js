@@ -38,14 +38,14 @@ export default function Home() {
 
   return(
     <Container>
-  <AppBar position="static">
+  <AppBar position="static" sx={{backgroundColor: '#3f51b5'}}>
     <Toolbar>
       <Typography variant="h6" style={{flexGrow: 1}}>
         Flashcard SaaS
       </Typography>
       <SignedOut>
       <Link href="/sign-in" passHref>
-         <Button color="inherit">Login</Button>
+         <Button color="inherit">Sign In</Button>
       </Link>
       <Link href="/sign-up" passHref>
         <Button color="inherit">Sign Up</Button>
@@ -80,23 +80,23 @@ export default function Home() {
     </Box>
 
     <Box sx={{my: 6}}>
-    <Typography variant="h4" component="h2" gutterBottom>Features</Typography>
+    <Typography variant="h3" component="h2" gutterBottom>Features</Typography>
     <Grid container spacing={4}>
       {/* Feature items */}
       <Grid item xs={12} md={4}>
-      <Typography variant="h6" gutterBottom> Easy text Input</Typography>
+      <Typography variant="h5" gutterBottom> Easy text Input</Typography>
       <Typography variant="h6"> Simply input text and let our Software do the rest. 
         Creating flashcard has never been easier! </Typography>
       </Grid>
 
       <Grid item xs={12} md={4}>
-      <Typography variant="h6" gutterBottom> Smart Flashcards</Typography>
+      <Typography variant="h5" gutterBottom> Smart Flashcards</Typography>
       <Typography variant="h6"> Our AI breaks down your text into concise
         flahcards that are perfect for any of your study needs! </Typography>
       </Grid>
 
       <Grid item xs={12} md={4}>
-      <Typography variant="h6" gutterBottom> Accessible anywhere, anytime</Typography>
+      <Typography variant="h5" gutterBottom> Accessible anywhere, anytime</Typography>
       <Typography variant="h6"> Access your flashcards from any device at anytime. 
         Always study on the go with ease. Easily generate flashcards fast and keep it 
         100% your style! </Typography>
@@ -120,9 +120,9 @@ export default function Home() {
         }}>
           
       <Typography variant="h5" gutterBottom> Basic </Typography>
-      <Typography variant="h6" gutterBottom> $5/ month </Typography>
-      <Typography> Access to basic features and limited storage </Typography>
-      <Button variant="contained" color="primary" sx={{mt: 2}} onClick={handleSubmit}>
+      <Typography variant="h6" gutterBottom> $0/ month </Typography>
+      <Typography> Free to you! Get access to basic features and limited storage </Typography>
+      <Button variant="contained" color="primary" sx={{mt: 2}} href="/sign-in">
         Choose Basic
       </Button>
         </Box>
@@ -139,8 +139,8 @@ export default function Home() {
           
       <Typography variant="h5" gutterBottom> Premium </Typography>
       <Typography variant="h6" gutterBottom> $10/ month </Typography>
-      <Typography> Access to Premium features, unlimited storage and priority support </Typography>
-      <Button variant="contained" color="primary" sx={{mt: 2}}>
+      <Typography> Get access to Premium features, unlimited storage and priority support </Typography>
+      <Button variant="contained" color="primary" sx={{mt: 2}} onClick={handleSubmit}>
         Choose Premium
       </Button>
         </Box>

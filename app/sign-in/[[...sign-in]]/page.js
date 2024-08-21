@@ -14,9 +14,9 @@ export default function SignInPage() {
         Flashcard SaaS
         </Typography>
         
-        <Link href="/sign-in" passHref>
+        <Link href="/" passHref>
         <Button color="inherit">
-            Login
+           Home
         
         </Button>
         </Link>
@@ -27,6 +27,7 @@ export default function SignInPage() {
         </Link>
         </Button>
     </Toolbar>
+    </AppBar>
     <Box
     display="flex"
     flexDirection="column"
@@ -40,7 +41,7 @@ export default function SignInPage() {
     <SignIn />
     </Box>
 
-    </AppBar>
+
     </Container>
 
   )

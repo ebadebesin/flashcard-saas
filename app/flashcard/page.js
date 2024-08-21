@@ -13,6 +13,7 @@ import {
     Grid,
     Button,
     Typography,
+    Divider,
     Box,
     Card,
     CardContent,
@@ -82,7 +83,7 @@ export default function Flashcard() {
 
             console.log(search)
         //   const docs = await getDocs(colRef)
-        const docs = await getDocs(collection(colRef, 'flashcards')); // Reference to flashcards subcollection
+        const docs = await getDocs(collection(colRef, 'flashcardSets')); // Reference to flashcardSets subcollection
             console.log(colRef)
             
         if (docs.empty) {
@@ -116,7 +117,7 @@ export default function Flashcard() {
     return(
         <Container maxWidth="lg">
 
-      <AppBar position="static">
+      <AppBar position="static" sx={{backgroundColor: '#3f51b5'}}>
         <Toolbar>
           <Typography variant="h6" style={{ flexGrow: 1 }}>
             Flashcard SaaS
@@ -144,9 +145,13 @@ export default function Flashcard() {
           </SignedIn>
         </Toolbar>
       </AppBar>
+      
+      <Box>
+        <Typography variant='h3' color="darkblue">{search} flashcards </Typography>
+        <Divider sx={{ bgcolor: 'primary.main', width: 800 }} />
+      </Box>
 
             <Grid container spacing={3} sx={{ mt: 4 }}>
-            
             {flashcards.map((flashcard, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card>

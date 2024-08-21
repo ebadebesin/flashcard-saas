@@ -7,7 +7,7 @@ import { SignedOut, SignedIn, UserButton } from '@clerk/nextjs';
 import { useState, useEffect } from 'react';
 import { doc, collection, getDoc, setDoc } from '@firebase/firestore';
 import { db } from '@/firebase';
-import { Button, Container, Grid, Card, CardActionArea, CardContent, Typography, AppBar, Toolbar, } from '@mui/material';
+import { Button, Container, Grid, Card, CardActionArea, CardContent, Box, Divider, Typography, AppBar, Toolbar, } from '@mui/material';
 import Link from 'next/link';
 
 
@@ -49,14 +49,14 @@ export default function Flashcards() {
 
    
 
-    const handleCardClick = (name) => {
-        router.push(`/flashcard?id=${encodeURIComponent(name)}`); //id
+    const handleCardClick = (id) => {
+        router.push(`/flashcard?id=${encodeURIComponent(id)}`); //id
     }
 
     return (
         <Container maxWidth="md">
 
-        <AppBar position="static">
+        <AppBar position="static" sx={{backgroundColor: '#3f51b5'}}>
         <Toolbar>
           <Typography variant="h6" style={{ flexGrow: 1 }}>
             Flashcard SaaS
@@ -84,8 +84,12 @@ export default function Flashcards() {
           </SignedIn>
         </Toolbar>
       </AppBar>
-
+   
         <Grid container spacing={3} sx={{ mt: 4 }}>
+          <Box>
+            <Typography variant='h2' color="darkblue">Your Flashcard Collection</Typography>
+            <Divider sx={{ bgcolor: 'primary.main', width: 800 }} />
+          </Box>
             {flashcards.map((flashcard, index) => (
                 <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card>
