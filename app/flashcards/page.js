@@ -35,16 +35,23 @@ export default function Flashcards() {
         getFlashcards()
     }, [user])
 
-    if (!isLoaded || !isSignedIn){
-        return <div>...Loading</div>
+    if (!isLoaded){
+        return <div> <h1>...Loading</h1></div>
+    } else if (!isSignedIn) {
+        return <div> 
+           <h1>404</h1>  
+            <br>
+            </br> 
+            <h3>Not signed in...</h3>
+            <h2>Please sign in to view your saved flashcards</h2>
+        </div>
     }
+
+   
 
     const handleCardClick = (name) => {
-        router.push(`/flashcard?id=${encodeURIComponent(name)}`); //encodeURIComponent(name)
+        router.push(`/flashcard?id=${encodeURIComponent(name)}`); //id
     }
-
-
-
 
     return (
         <Container maxWidth="md">
